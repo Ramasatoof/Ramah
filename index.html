@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Garden</title>
+    <meta name="description" content="Plant flowers based on your mood and grow your personal garden">
+    <meta name="theme-color" content="#4F46E5">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌻</text></svg>">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌻 Mood Garden</h1>
+            <p>Plant a flower based on how you're feeling today</p>
+        </header>
+
+        <main>
+            <section class="mood-selector">
+                <h2>How are you feeling?</h2>
+                <div class="mood-buttons">
+                    <button class="mood-btn" data-mood="happy" data-color="happy">
+                        😊 Happy
+                    </button>
+                    <button class="mood-btn" data-mood="calm" data-color="calm">
+                        😌 Calm
+                    </button>
+                    <button class="mood-btn" data-mood="energetic" data-color="energetic">
+                        ⚡ Energetic
+                    </button>
+                    <button class="mood-btn" data-mood="peaceful" data-color="peaceful">
+                        🧘 Peaceful
+                    </button>
+                </div>
+            </section>
+
+            <section class="affirmation-section" id="affirmationSection" style="display: none;">
+                <div class="affirmation-card">
+                    <p id="affirmationText"></p>
+                </div>
+            </section>
+
+            <section class="garden">
+                <h2>Your Garden</h2>
+                <div class="garden-grid" id="gardenGrid">
+                    <!-- Flowers will be dynamically added here -->
+                </div>
+                <div class="garden-stats">
+                    <p>🌸 Flowers planted: <span id="flowerCount">0</span></p>
+                    <p>🌱 Days active: <span id="daysActive">0</span></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
