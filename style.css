@@ -1,0 +1,254 @@
+:root {
+    --primary-color: #4F46E5;
+    --text-dark: #1F2937;
+    --text-light: #6B7280;
+    --white: #FFFFFF;
+    --border-radius: 16px;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: var(--transition);
+}
+
+body.happy {
+    background: linear-gradient(135deg, #FFD89B 0%, #19547B 100%);
+}
+
+body.calm {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body.energetic {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+body.peaceful {
+    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mood-selector {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.mood-selector h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.mood-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.mood-btn {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.mood-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mood-btn.active {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    color: var(--white);
+}
+
+.affirmation-section {
+    margin-bottom: 2rem;
+}
+
+.affirmation-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.affirmation-card p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-style: italic;
+}
+
+.garden {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.garden h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.garden-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    min-height: 200px;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    border: 2px dashed #cbd5e0;
+}
+
+.flower {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    animation: growFlower 0.6s ease-out;
+}
+
+.flower:hover {
+    transform: scale(1.1);
+}
+
+.flower.happy {
+    background: linear-gradient(135deg, #FFD89B 0%, #F7D794 100%);
+}
+
+.flower.calm {
+    background: linear-gradient(135deg, #A8E6CF 0%, #7FCDCD 100%);
+}
+
+.flower.energetic {
+    background: linear-gradient(135deg, #FFB3BA 0%, #FFDFBA 100%);
+}
+
+.flower.peaceful {
+    background: linear-gradient(135deg, #B8E6B8 0%, #A8D8EA 100%);
+}
+
+.garden-stats {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.garden-stats span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes growFlower {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .mood-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .garden-stats {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mood-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .garden-grid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    }
+    
+    .flower {
+        font-size: 1.5rem;
+    }
+}
